@@ -5,7 +5,7 @@ var express = require('express'),
   bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Tododb');
+mongoose.connect(process.env.DATABASE_URL || 'mongodb://localhost/Tododb');
 
 
 if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
