@@ -64,11 +64,11 @@ $.each(params, function(i, val) {
 var xhr = new XMLHttpRequest();
 var url;
 if(document.getElementById("save_data").value=="SAVE"){
-  url = "http://localhost:3000/tasks";
+  url = "http://zd1.alvologic.com:51010/tasks";
   xhr.open("POST", url, true);
   console.log(url);
 }else {
-  url = "http://localhost:3000/tasks/"+sessionStorage.getItem("id");
+  url = "http://zd1.alvologic.com:51010/tasks/"+sessionStorage.getItem("id");
   console.log(url);
   xhr.open("PUT", url, true);
 }

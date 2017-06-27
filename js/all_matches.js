@@ -3,7 +3,7 @@
 function getMatches(){
 
   var xhr = new XMLHttpRequest();
-  var url = "http://localhost:3000/tasks";
+  var url = "http://zd1.alvologic.com:51010/tasks";
   xhr.open("GET", url, true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function () {
@@ -34,7 +34,7 @@ var li='<div class="wrapper">'+name+'<img onclick="deleteMatch(\''+id+'\')" src=
 function deleteMatch(id){
 
   var xhr = new XMLHttpRequest();
-  var url = "http://localhost:3000/tasks/"+id+"";
+  var url = "http://zd1.alvologic.com:51010/"+id+"";
   xhr.open("DELETE", url, true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function () {
@@ -49,7 +49,7 @@ function deleteMatch(id){
 
 function editMatch(id){
   var xhr = new XMLHttpRequest();
-  var url = "http://localhost:3000/tasks/"+id+"";
+  var url = "http://zd1.alvologic.com:51010/"+id+"";
   xhr.open("GET", url, true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.onreadystatechange = function () {
