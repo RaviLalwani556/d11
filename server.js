@@ -1,12 +1,13 @@
 var express = require('express'),
   app = express(),
   port = process.env.PORT || 51010,
+  db_url = process.env.DATABASE_URL,
   mongoose = require('mongoose'),
   Task = require('./api/models/todoListModel'),
   bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://heroku_2t7xmcsx:b69padm1ni2pbrrbs5r5hvkn50@ds139362.mlab.com:39362/heroku_2t7xmcsx');
+mongoose.connect(db_url);
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -24,4 +25,4 @@ routes(app);
 app.listen(port);
 
 
-console.log('todo list RESTful API server started on: ' + port);
+console.log('todo list RESTful API server started on: ' + port + ' with db ' + db_url);
